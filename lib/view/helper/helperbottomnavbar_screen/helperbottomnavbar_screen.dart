@@ -5,20 +5,25 @@ import 'package:lemons_bakery_app/controller/bottomnavbar_controller/bottomnavba
 import 'package:lemons_bakery_app/controller/bottomnavbar_controller/bottomnavbar_state.dart';
 import 'package:lemons_bakery_app/utils/constatnts/color_constants.dart';
 import 'package:lemons_bakery_app/utils/constatnts/image_constants.dart';
+import 'package:lemons_bakery_app/view/helper/helper_order_screen/helper_order_screen.dart';
+import 'package:lemons_bakery_app/view/helper/helpercake_order_screen/helpercakeorder_screen.dart';
+import 'package:lemons_bakery_app/view/helper/helpertodays_special_screen/helpertodays_specialscreen.dart';
 
 class HelperBottomNavBarScreen extends ConsumerWidget {
   const HelperBottomNavBarScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List screens = [];
+    List screens = [
+      HelperOrderScreen(),
+      HelpertodaysSpecialscreen(),
+      HelpercakeOrderScreen()
+    ];
     //int selectedindex = 0;
     final bottomnavbarscreenstate =
         ref.watch(bottomnavbarProvider) as BottomnavbarState;
     return Scaffold(
-      body: Center(
-        child: Text('s'),
-      ),
+      body: screens[bottomnavbarscreenstate.index],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           ref.read(bottomnavbarProvider.notifier).incindex(index: value);
@@ -38,33 +43,25 @@ class HelperBottomNavBarScreen extends ConsumerWidget {
             color: ColorConstants.browncolor),
         items: [
           BottomNavigationBarItem(
-            label: 'Items',
+            label: 'Orders',
             icon: Image.asset(
-              ImageConstants.itemicon,
+              ImageConstants.ordericon,
               height: 27,
               width: 27,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Offers',
+            label: 'Todays Special',
             icon: Image.asset(
-              ImageConstants.offericon, // Use correct cart image
+              ImageConstants.todaysspecialicon, // Use correct cart image
               height: 27,
               width: 27,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Helper',
+            label: 'Cake Orders',
             icon: Image.asset(
-              ImageConstants.helpericon,
-              height: 27,
-              width: 27,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: 'Reports',
-            icon: Image.asset(
-              ImageConstants.reporticon,
+              ImageConstants.cakeordericon,
               height: 27,
               width: 27,
             ),

@@ -24,4 +24,7 @@ class ImageConstants {
   static String reporticon = 'assets/images/clipboard 1.png';
   static String gifticon = 'assets/images/gift 1.png';
   static String breadicon = 'assets/images/white-bread.png';
+  static String ordericon = 'assets/images/shopping-bag 3.png';
+  static String todaysspecialicon = 'assets/images/special 1.png';
+  static String cakeordericon = 'assets/images/cake 2.png';
 }
