@@ -18,4 +18,10 @@ class ImageConstants {
   static String profilesettingsicon = 'assets/images/settingsprofile.png';
   static String yourordericon = 'assets/images/settingorder.png';
   static String logouticon = 'assets/images/settinglogout.png';
+  static String itemicon = 'assets/images/shopping-bag 2.png';
+  static String offericon = 'assets/images/Group 71.png';
+  static String helpericon = 'assets/images/user 2.png';
+  static String reporticon = 'assets/images/clipboard 1.png';
+  static String gifticon = 'assets/images/gift 1.png';
+  static String breadicon = 'assets/images/white-bread.png';
 }

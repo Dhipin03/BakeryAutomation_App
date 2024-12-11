@@ -5,13 +5,22 @@ import 'package:lemons_bakery_app/controller/bottomnavbar_controller/bottomnavba
 import 'package:lemons_bakery_app/controller/bottomnavbar_controller/bottomnavbar_state.dart';
 import 'package:lemons_bakery_app/utils/constatnts/color_constants.dart';
 import 'package:lemons_bakery_app/utils/constatnts/image_constants.dart';
+import 'package:lemons_bakery_app/view/admin/adminitems_screen/adminitems_screen.dart';
+import 'package:lemons_bakery_app/view/admin/helper_screen/helper_screen.dart';
+import 'package:lemons_bakery_app/view/admin/offer_screen/offer_screen.dart';
+import 'package:lemons_bakery_app/view/admin/report_screen/report_screen.dart';
 
-class BottomnavbarScreen extends ConsumerWidget {
-  const BottomnavbarScreen({super.key});
+class AdminBottomnavbarScreen extends ConsumerWidget {
+  const AdminBottomnavbarScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List screens = [];
+    List screens = [
+      AdminItemsScreen(),
+      OfferScreen(),
+      HelperScreen(),
+      ReportScreen()
+    ];
     //int selectedindex = 0;
     final bottomnavbarscreenstate =
         ref.watch(bottomnavbarProvider) as BottomnavbarState;
@@ -36,41 +45,33 @@ class BottomnavbarScreen extends ConsumerWidget {
             color: ColorConstants.browncolor),
         items: [
           BottomNavigationBarItem(
-            label: 'Home',
-            icon: Image.asset(
-              ImageConstants.homeimg,
-              height: 27,
-              width: 27,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: 'Cart',
-            icon: Image.asset(
-              ImageConstants.cartimg, // Use correct cart image
-              height: 27,
-              width: 27,
-            ),
-          ),
-          BottomNavigationBarItem(
             label: 'Items',
             icon: Image.asset(
-              ImageConstants.itemsimg,
+              ImageConstants.itemicon,
               height: 27,
               width: 27,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Cakes',
+            label: 'Offers',
             icon: Image.asset(
-              ImageConstants.cakesimg,
+              ImageConstants.offericon, // Use correct cart image
               height: 27,
               width: 27,
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Account',
+            label: 'Helper',
             icon: Image.asset(
-              ImageConstants.accountimg,
+              ImageConstants.helpericon,
+              height: 27,
+              width: 27,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Reports',
+            icon: Image.asset(
+              ImageConstants.reporticon,
               height: 27,
               width: 27,
             ),
